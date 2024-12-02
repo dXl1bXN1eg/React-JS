@@ -1,6 +1,6 @@
 # React JS
 
-## En Güncel ve Popüler React Kütüphaneleri
+## En Güncel React Kütüphaneleri
 
 1. React Router
 2. Redux / Redux Toolkit
