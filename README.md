@@ -40,6 +40,13 @@ my-react-app/
 └── ...
 ```
 
+## Açıklamalar:
+
+- **`my-react-app/`**: Proje kök dizini.
+- **`public/`**: HTML dosyasının bulunduğu dizin (React uygulaması burada render edilir).
+- **`src/`**: React bileşenlerinin ve JavaScript dosyalarının bulunduğu dizin.
+- **`package.json`**: Proje bağımlılıkları, komutları ve meta bilgilerin bulunduğu dosya.
+
 
 
 
