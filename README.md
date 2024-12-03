@@ -1,13 +1,25 @@
 ## Sıfırdan React JS Projesi Oluşturma 
 
-### Adım 1
+### Adım 1 Kurulum ve İndirmeler
+```
+sudo apt update -y && sudo apt upgrade -y
+sudo apt install npm
+sudo apt install python3 python3-pip
+sudo pip3 install virtualenv
+
+cd /project/pwd
+virtualenv venv
+source venv/bin/activate
+```
+
+### Adım 2 Proje Çerçevesi Oluşturma
 ```
 npx create-react-app my-react-app
 cd my-react-app/
-npm start 
+npm start
 ```
 
-### Adım 2
+### Adım 3 Kütüphaneleri İndirme ve Düzeltmeler
 ```
 npm install react react-dom
 npm audit fix
