@@ -1,20 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
-  // State'leri tanımlıyoruz
   const [tasks, setTasks] = useState([]);
   const [taskInput, setTaskInput] = useState('');
 
-  // Görev ekleme fonksiyonu
+  // Sayfa yüklendiğinde görevleri al
+  useEffect(() => {
+    fetch('http://localhost:5000/tasks')
+      .then(response => response.json())
+      .then(data => setTasks(data))
+      .catch(error => console.error('Görevler alınamadı:', error));
+  }, []);
+
+  // Görev ekleme
   const addTask = (e) => {
-    e.preventDefault();  // Formun sayfa yenilemesini engeller
-    if (taskInput.trim() === '') return;  // Eğer input boşsa işlem yapma
-    setTasks([...tasks, { text: taskInput, completed: false }]);
-    setTaskInput('');  // Inputu temizle
+    e.preventDefault();
+    if (taskInput.trim() === '') return;
+
+    const newTask = { text: taskInput, completed: false };
+
+    // Yeni görevi API'ye gönder
+    fetch('http://localhost:5000/tasks', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newTask),
+    })
+      .then(response => response.json())
+      .then(data => setTasks([...tasks, data]))
+      .catch(error => console.error('Görev eklenemedi:', error));
+
+    setTaskInput('');
   };
 
-  // Görevin tamamlanma durumunu değiştiren fonksiyon
+  // Görev tamamlanma durumunu değiştirme
   const toggleTaskCompletion = (index) => {
     const updatedTasks = tasks.map((task, i) =>
       i === index ? { ...task, completed: !task.completed } : task
@@ -22,17 +43,10 @@ function App() {
     setTasks(updatedTasks);
   };
 
-  // Görevi silme fonksiyonu
-  const deleteTask = (index) => {
-    const updatedTasks = tasks.filter((_, i) => i !== index);
-    setTasks(updatedTasks);
-  };
-
   return (
     <div className="App">
       <h1>Yapılacaklar Listesi</h1>
 
-      {/* Görev ekleme formu */}
       <form onSubmit={addTask}>
         <input
           type="text"
@@ -43,7 +57,6 @@ function App() {
         <button type="submit">Ekle</button>
       </form>
 
-      {/* Görev listesi */}
       <ul>
         {tasks.map((task, index) => (
           <li key={index} className={task.completed ? 'completed' : ''}>
@@ -53,7 +66,6 @@ function App() {
               onChange={() => toggleTaskCompletion(index)}
             />
             {task.text}
-            <button onClick={() => deleteTask(index)}>Sil</button>
           </li>
         ))}
       </ul>
