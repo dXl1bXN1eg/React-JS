@@ -1,5 +1,4 @@
-## React JS
-## Sıfırdan proje oluşturma 
+## Sıfırdan React JS Projesi Oluşturma 
 
 ### Adım 1
 ```
