@@ -7,5 +7,10 @@ cd my-react-app/
 npm start 
 ```
 
-
-
+### Adım 2
+```
+npm install react react-dom
+npm audit fix
+npm audit fix --force
+npm audit
+```
