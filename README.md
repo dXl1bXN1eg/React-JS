@@ -54,7 +54,12 @@ my-react-app/
 - **`package.json`**: Proje bağımlılıkları, komutları ve meta bilgilerin bulunduğu dosya.
 
 
+## Veritabanı Entegrasyonu
+```
+npm init -y  # package.json dosyasını oluşturur
+npm install express mongoose cors body-parser  # Express, MongoDB bağlantısı, CORS ve JSON veri işleme için gerekli paketler
 
+```
 
 
 
