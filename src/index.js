@@ -1,17 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // React 18 ve sonrası için yeni import
-import './index.css'; // Varsayılan stil dosyası, isteğe bağlı
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';  // App bileşenini import et
 
-function MyForm() {
-  return (
-    <form>
-      <label>
-        Enter your name:
-        <input type="text" />
-      </label>
-    </form>
-  );
-}
-
-const root = ReactDOM.createRoot(document.getElementById('root')); // React 18'de kullanılan yeni yöntem
-root.render(<MyForm />);
+// React uygulamasını 'root' div'ine render et
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+  <React.StrictMode>
+    <App />  {/* App bileşenini burada render ediyoruz */}
+  </React.StrictMode>
+);
