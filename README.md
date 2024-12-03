@@ -26,3 +26,22 @@ npm audit fix
 npm audit fix --force
 npm audit
 ```
+
+### Dosya Yapısı 
+```
+my-react-app/
+├── public/
+│   ├── index.html
+├── src/
+│   ├── index.jsx
+│   ├── App.jsx (veya App.js)
+│   └── ...
+├── package.json
+└── ...
+```
+
+
+
+
+
+
