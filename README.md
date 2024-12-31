@@ -1,1 +1,12 @@
-<img src="https://raw.githubusercontent.com/dXl1bXN1eg/React-JS/main/react-1.png" alt="HTML Resmi" style="width:700px; height:auto;">
+function Video({ video }) {
+  return (
+    <div>
+      <Thumbnail video={video} />
+      <a href={video.url}>
+        <h3>{video.title}</h3>
+        <p>{video.description}</p>
+      </a>
+      <LikeButton video={video} />
+    </div>
+  );
+}
