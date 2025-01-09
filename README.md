@@ -1,12 +1,13 @@
-function Video({ video }) {
-  return (
-    <div>
-      <Thumbnail video={video} />
-      <a href={video.url}>
-        <h3>{video.title}</h3>
-        <p>{video.description}</p>
-      </a>
-      <LikeButton video={video} />
-    </div>
-  );
-}
+// Node.js
+// Node Paket Management (npm)
+
+// Visual Studio Code 
+// Simple React Snippets (Install)
+// ES7+ React/Redux/React-Native snippets
+// Auto Rename Tag
+
+// COMPONENT
+// PROPS
+// STATE MANAGEMENT
+
+// https://vite.dev/guide/
