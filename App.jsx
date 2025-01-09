@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import TestComponent from './TestComponent';
+import { users } from './TestComponent';
 
 function App() {
   let a = 10;
@@ -14,17 +16,21 @@ function App() {
     "Gri Şapka"
   ]
 
+  console.log(users)
+
   return (
-    <div style={{ backgroundColor: 'red', height: '100hz' }}>
+    <div className='Container'>
       {/* sonuc ? <p>Ehliyeti Alabilirsiniz ..</p> : <p>Ehliyeti Alamassın ..</p> */}
 
       {/* (a + b) / 2 >= 50 ? <p>Dersten Geçtin</p> : <p>Dersten Kaldın</p> */}
 
-      {isimler.map((isim, index) => (
+      {/* isimler.map((isim, index) => (
         <div style={{ color: 'black' }} key={index}>
           <a style={{ color: 'black', textDecoration: 'none', fontSize: '20px' }} href='#'>{index}. {isim}</a>
         </div>
-      ))}
+      )) */}
+
+      <TestComponent />
     </div>
   )
 }
