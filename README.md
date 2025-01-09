@@ -19,4 +19,9 @@
 // https://vite.dev/guide/
 
 
+
+npm run dev
+
+
 npm install react-icons
+
