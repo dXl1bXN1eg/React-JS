@@ -17,3 +17,6 @@
 // STATE MANAGEMENT
 
 // https://vite.dev/guide/
+
+
+npm install react-icons
