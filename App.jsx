@@ -9,7 +9,7 @@ function App() {
 
   let sonuc = true;
 
-  let isimler = [
+  let türler = [
     "Hacker",
     "Siyah Şapka",
     "Beyaz Şapka",
@@ -24,7 +24,7 @@ function App() {
 
       {/* (a + b) / 2 >= 50 ? <p>Dersten Geçtin</p> : <p>Dersten Kaldın</p> */}
 
-      {/* isimler.map((isim, index) => (
+      {/* türler.map((isim, index) => (
         <div style={{ color: 'black' }} key={index}>
           <a style={{ color: 'black', textDecoration: 'none', fontSize: '20px' }} href='#'>{index}. {isim}</a>
         </div>
