@@ -1,28 +1,33 @@
-// Node.js
+## React İçin Gerekli Paketler
 
-// Node Paket Management (npm)
+```
+Node.js
+Node Paket Management (npm)
+```
 
-// Visual Studio Code 
+## Visual Studio Code
+``` 
+Simple React Snippets (Install)
+ES7+ React/Redux/React-Native snippets
+Auto Rename Tag
+```
 
-// Simple React Snippets (Install)
+## React Genel Yapısı
+```
+COMPONENT
+PROPS
+STATE MANAGEMENT
+```
 
-// ES7+ React/Redux/React-Native snippets
+## Kaynak
+```
+https://vite.dev/guide/
+```
 
-// Auto Rename Tag
-
-// COMPONENT
-
-// PROPS
-
-// STATE MANAGEMENT
-
-// https://vite.dev/guide/
-
-
-
+## Başlatma
+```
 npm install
 npm run dev
 
-
 npm install react-icons
-
+```
