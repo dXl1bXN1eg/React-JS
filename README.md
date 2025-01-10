@@ -14,9 +14,9 @@ Auto Rename Tag
 
 ## React Genel Yapısı
 ```
-COMPONENT
-PROPS
-STATE MANAGEMENT
+COMPONENT          ---> Function()
+PROPS              ---> Bir Veriyi bir component'den diğerine ve diğerine .. aktarmaya props diyoruz.
+STATE MANAGEMENT   ---> 
 ```
 
 ## Kaynak
