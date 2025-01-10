@@ -26,6 +26,8 @@ https://vite.dev/guide/
 
 ## Başlatma
 ```
+npm create vite@latest
+
 npm install
 npm run dev
 
