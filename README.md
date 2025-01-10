@@ -5,7 +5,7 @@ Node.js
 Node Paket Management (npm)
 ```
 
-## Visual Studio Code
+## Visual Studio Code Eklentiler
 ``` 
 Simple React Snippets (Install)
 ES7+ React/Redux/React-Native snippets
