@@ -16,7 +16,8 @@ Auto Rename Tag
 ```
 COMPONENT          ---> Function()
 PROPS              ---> Bir Veriyi bir component'den diğerine ve diğerine .. aktarmaya props diyoruz.
-STATE MANAGEMENT   ---> 
+STATE MANAGEMENT   --->
+useEffect          ---> Sayfa yüklendiğinde yapılacak işlemler.
 ```
 
 ## Kaynak
