@@ -10,6 +10,10 @@ npm install express sqlite3
 npm install firebase
 npm install -g firebase-tools
 
+firebase login
+firebase init
+firebase deploy
+
 ```
 
 ## React Genel Yapısı
