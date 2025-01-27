@@ -1,7 +1,7 @@
-import Python from '../images/egitim1.png'
-import Go from '../images/egitim2.png'
-import JavaScript from '../images/egitim3.png'
-import Bash from '../images/egitim4.png'
+import Python from '../images/python.jpeg'
+import Go from '../images/golang.jpeg'
+import JavaScript from '../images/javascript.png'
+import Bash from '../images/bash.png'
 
 export const courses = [
     {
