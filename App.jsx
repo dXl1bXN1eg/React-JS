@@ -1,39 +1,47 @@
-import { useState } from 'react'
-import './App.css'
-import TestComponent from './TestComponent';
-import { users } from './TestComponent';
+import React, { useState } from 'react';
+import Headers from './Headers';
+import './App.css';
+import Course from './Course';
+import { courses } from './data';
 
 function App() {
-  let a = 10;
-  let b = 4;
+  const itemsPerPage = 4;
+  const [currentPage, setCurrentPage] = useState(1);
 
-  let sonuc = true;
+  const totalPages = Math.ceil(courses.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const currentCourses = courses.slice(startIndex, startIndex + itemsPerPage);
 
-  let türler = [
-    "Hacker",
-    "Siyah Şapka",
-    "Beyaz Şapka",
-    "Gri Şapka"
-  ]
+  const handleNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(prevPage => prevPage + 1);
+    }
+  };
 
-  console.log(users)
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(prevPage => prevPage - 1);
+    }
+  };
 
   return (
-    <div className='Container'>
-      {/* sonuc ? <p>Ehliyeti Alabilirsiniz ..</p> : <p>Ehliyeti Alamassın ..</p> */}
-
-      {/* (a + b) / 2 >= 50 ? <p>Dersten Geçtin</p> : <p>Dersten Kaldın</p> */}
-
-      {/* türler.map((isim, index) => (
-        <div style={{ color: 'black' }} key={index}>
-          <a style={{ color: 'black', textDecoration: 'none', fontSize: '20px' }} href='#'>{index}. {isim}</a>
+    <div className="app-container">
+      <Headers />
+      <div className="course-wrapper">
+        <button className="pagination-btn left" onClick={handlePrevPage} disabled={currentPage === 1}>
+          &#8592;
+        </button>
+        <div className="course-list">
+          {currentCourses.map((course) => (
+            <Course key={course.id} course={course} />
+          ))}
         </div>
-      )) */}
-
-      <TestComponent />
+        <button className="pagination-btn right" onClick={handleNextPage} disabled={currentPage === totalPages}>
+          &#8594;
+        </button>
+      </div>
     </div>
-  )
+  );
 }
 
-
-export default App
+export default App;
