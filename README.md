@@ -7,6 +7,8 @@ npm run dev
 
 npm install react-icons
 npm install express sqlite3
+npm install firebase
+npm install -g firebase-tools
 
 ```
 
