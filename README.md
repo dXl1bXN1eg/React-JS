@@ -17,7 +17,7 @@ Auto Rename Tag
 COMPONENT          ---> Function()
 PROPS              ---> Bir Veriyi bir component'den diğerine ve diğerine .. aktarmaya props diyoruz.
 STATE MANAGEMENT   --->
-useEffect          ---> Sayfa yüklendiğinde yapılacak işlemler.
+USEEFFECT          ---> Sayfa yüklendiğinde yapılacak işlemler.
 ```
 
 ## Kaynak
@@ -33,4 +33,6 @@ npm install
 npm run dev
 
 npm install react-icons
+npm install express sqlite3
+
 ```
