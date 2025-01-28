@@ -8,7 +8,8 @@ npm run dev
 npm install react-icons
 npm install express sqlite3
 npm install react-router-dom
-
+npm install @shadcn/ui
+npm install react react-dom framer-motion tailwindcss postcss autoprefixer
 
 ```
 
