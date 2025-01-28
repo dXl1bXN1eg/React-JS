@@ -26,7 +26,12 @@ export default function Courses() {
     return (
         <div>
             <Headers />
-
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
             <div className="course-wrapper">
                 <button className="pagination-btn left" onClick={handlePrevPage} disabled={currentPage === 1}>
                     &#8592;
