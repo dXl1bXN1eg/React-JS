@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/styleheaders.css';
+import '../css/headers.css';
 import { Link } from 'react-router-dom';
 
 function Headers() {
@@ -10,17 +10,16 @@ function Headers() {
                 <nav>
                     <ul>
                         <li>
-                            <a href="/" className="hover:text-blue-200">
-                                Ana Sayfa
-                            </a>
+                            <Link to="/" className="hover:text-blue-200">Ana Sayfa</Link>
                         </li>
                         <li>
-                            <a href="/courses" className="hover:text-blue-200">
-                                Kurslarım
-                            </a>
+                            <Link to="/courses" className="hover:text-blue-200">Kurslarım</Link>
                         </li>
                         <li>
                             <Link to="/login" className="hover:text-blue-200">Giriş Yap</Link>
+                        </li>
+                        <li>
+                            <Link to="/register" className="hover:text-blue-200">Kayıt Ol</Link>
                         </li>
 
                     </ul>
