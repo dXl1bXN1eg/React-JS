@@ -1,9 +1,14 @@
+/* Header Stili */
 .header {
-    background-color: #5981ac;
     color: white;
     padding: 1rem;
     width: 100%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-size: 20px;
+    box-shadow: 0 4px 6px rgba(12, 12, 12, 0.1);
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Yarı saydam arka plan */
+    backdrop-filter: blur(10px);
+    /* Arka planı bulanıklaştır */
 }
 
 .header .container {
@@ -18,22 +23,64 @@
 .header h1 {
     font-size: 1.5rem;
     font-weight: bold;
+    color: white;
+    transition: color 0.3s;
+    /* Renk geçişi */
 }
 
 .header nav ul {
     display: flex;
     gap: 1rem;
-    list-style: none;
     padding: 0;
+    /* Padding kaldırıldı */
+    list-style: none;
     margin: 0;
 }
 
 .header nav a {
     text-decoration: none;
+    padding: 10px 15px;
+    /* Daha az padding */
     color: white;
-    transition: color 0.3s;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+    /* Geçiş efektleri */
 }
 
 .header nav a:hover {
     color: #cce7ff;
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Daha açık bir arka plan rengi */
+}
+
+.header nav a:active,
+.header nav a:focus {
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Aktif ve odaklanmış durum için daha belirgin bir arka plan */
+}
+
+/* Responsive tasarım için ayarlar */
+@media (max-width: 768px) {
+    .header .container {
+        flex-direction: column;
+        /* Dikey hizalama */
+        align-items: flex-start;
+        /* Sol hizalama */
+    }
+
+    .header nav ul {
+        flex-direction: column;
+        /* Dikey menü */
+        gap: 0.5rem;
+        /* Elemanlar arası boşluk */
+    }
+
+    .header nav a {
+        padding: 10px;
+        /* Dikey menü için padding */
+        width: 100%;
+        /* Tam genişlik */
+        text-align: center;
+        /* Ortalanmış metin */
+    }
 }

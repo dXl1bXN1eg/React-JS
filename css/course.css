@@ -1,18 +1,27 @@
+.course-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
 .course-list {
     display: flex;
-    flex-direction: row;
     gap: 20px;
     overflow-x: auto;
     padding: 20px;
+    justify-content: center;
     scrollbar-width: none;
+    width: 80vw;
+    /* Kursları container içinde ortala */
 }
 
 .course-list::-webkit-scrollbar {
     display: none;
+    /* Chrome ve Safari için kaydırma çubuğunu gizle */
 }
 
 .course-container {
-    cursor: pointer;
     flex: 0 0 auto;
     width: 300px;
     border: 1px solid #ddd;
@@ -53,4 +62,37 @@
 
 .course-container a:hover {
     background-color: #0056b3;
+}
+
+.pagination-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 1;
+}
+
+.pagination-btn:hover {
+    background-color: #0056b3;
+}
+
+.pagination-btn:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}
+
+.left {
+    position: absolute;
+    left: 150px;
+    padding-bottom: 19px;
+}
+
+.right {
+    position: absolute;
+    padding-bottom: 19px;
+    right: 150px;
 }
