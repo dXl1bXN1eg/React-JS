@@ -1,5 +1,6 @@
 import React from 'react';
-import '../css/header.css';
+import '../css/styleheaders.css';
+import { Link } from 'react-router-dom';
 
 function Headers() {
     return (
@@ -14,10 +15,14 @@ function Headers() {
                             </a>
                         </li>
                         <li>
-                            <a href="#courses" className="hover:text-blue-200">
+                            <a href="/courses" className="hover:text-blue-200">
                                 Kurslarım
                             </a>
                         </li>
+                        <li>
+                            <Link to="/login" className="hover:text-blue-200">Giriş Yap</Link>
+                        </li>
+
                     </ul>
                 </nav>
             </div>
