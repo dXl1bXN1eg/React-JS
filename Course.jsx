@@ -1,8 +1,9 @@
 import { courses } from './data';
 import React from 'react';
 import Headers from './Headers';
+import '../css/course.css';
 
-export default function AppCourses() {
+export default function Courses() {
     const itemsPerPage = 4;
     const [currentPage, setCurrentPage] = React.useState(1);
 
