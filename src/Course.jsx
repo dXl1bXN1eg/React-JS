@@ -2,9 +2,10 @@ import { courses } from './data';
 import React from 'react';
 import Headers from './Headers';
 import '../css/course.css';
+import Anasayfa from './Anasayfa';
 
 export default function Courses() {
-    const itemsPerPage = 4;
+    const itemsPerPage = 3;
     const [currentPage, setCurrentPage] = React.useState(1);
 
     const totalPages = Math.ceil(courses.length / itemsPerPage);
@@ -26,6 +27,7 @@ export default function Courses() {
     return (
         <div>
             <Headers />
+            <Anasayfa />
             <br />
             <br />
             <br />

@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import Headers from './Headers';
 import '../css/login.css';
+import Anasayfa from './Anasayfa';
 
 export default function Login() {
     const [formData, setFormData] = useState({ username: '', password: '' });
 
+    // Değişiklikleri yakalamak için bir handler fonksiyonu
     const handleInputChange = (e) => {
         const { name, value } = e.target;
         setFormData((prev) => ({
@@ -15,6 +17,7 @@ export default function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
         if (formData.username === 'admin' && formData.password === '12345') {
             alert('Login successful!');
         } else {
@@ -25,6 +28,7 @@ export default function Login() {
     return (
         <div>
             <Headers />
+            <Anasayfa />
             <div className='container_login'>
                 <center>
                     <h1 id='loginname'>Login</h1>

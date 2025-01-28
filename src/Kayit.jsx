@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Headers from './Headers';
 import '../css/register.css';
+import Anasayfa from './Anasayfa';
 
 export default function Kayit() {
     const [formData, setFormData] = useState({ name: '', username: '', email: '', password: '' });
@@ -27,6 +28,7 @@ export default function Kayit() {
     return (
         <div>
             <Headers />
+            <Anasayfa />
             <div className='container_register'>
                 <center>
                     <h1 id='register'>Register</h1>

@@ -12,15 +12,17 @@ function Headers() {
                         <li>
                             <Link to="/" className="hover:text-blue-200">Ana Sayfa</Link>
                         </li>
+
                         <li>
                             <Link to="/courses" className="hover:text-blue-200">Kurslarım</Link>
                         </li>
                         <li>
-                            <Link to="/login" className="hover:text-blue-200">Giriş Yap</Link>
-                        </li>
-                        <li>
                             <Link to="/register" className="hover:text-blue-200">Kayıt Ol</Link>
                         </li>
+                        <li>
+                            <Link to="/login" className="hover:text-blue-200">Giriş Yap</Link>
+                        </li>
+
 
                     </ul>
                 </nav>
