@@ -36,10 +36,10 @@ def get_network():
 
 @app.route('/api/users')
 def get_users():
-    users = []
+    users = set()  
     for user in psutil.users():
-        users.append(user.name)
-    return jsonify(users)
+        users.add(user.name)  
+    return jsonify(list(users))  
 
 if __name__ == '__main__':
     app.run(debug=True)
