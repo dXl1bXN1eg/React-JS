@@ -2,7 +2,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import React from 'react';
 import Login from './Login';
 import Headers from './Headers';
-import Courses from './Courses';
+import Courses from './Course';
 import './App.css';
 
 function App() {
