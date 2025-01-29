@@ -5,6 +5,11 @@ import { motion } from "framer-motion";
 import { FaHdd, FaNetworkWired, FaUser, FaServer } from "react-icons/fa";
 import '../css/system.css';
 
+import { Bar, Doughnut } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ArcElement } from 'chart.js';
+
+ChartJS.register(ArcElement, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
 const SystemInfo = () => {
   const [systemInfo, setSystemInfo] = useState({
     disks: [],
@@ -13,8 +18,12 @@ const SystemInfo = () => {
     ip: "",
   });
 
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
     const getSystemInfo = async () => {
+      setLoading(true);
       try {
         const [disks, network, users, ip] = await Promise.all([
           axios.get("http://localhost:5000/api/disks"),
@@ -31,11 +40,55 @@ const SystemInfo = () => {
         });
       } catch (error) {
         console.error("Error getting system info:", error);
+        setError("Veri alınırken bir hata oluştu.");
+      } finally {
+        setLoading(false);
       }
     };
 
     getSystemInfo();
   }, []);
+
+  if (loading) {
+    return <div>Yükleniyor...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  const userChartData = {
+    labels: ['User  1', 'User  2', 'User  3'],
+    datasets: [
+      {
+        label: 'Users',
+        data: [10, 20, 30],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+      },
+    ],
+  };
+
+  const requestChartData = {
+    labels: ['Request 1', 'Request 2', 'Request 3'],
+    datasets: [
+      {
+        label: 'Requests',
+        data: [15, 25, 35],
+        backgroundColor: 'rgba(153, 102, 255, 0.6)',
+      },
+    ],
+  };
+
+  const doughnutChartData = {
+    labels: ['Type 1', 'Type 2', 'Type 3'],
+    datasets: [
+      {
+        label: 'İstek Türleri',
+        data: [30, 50, 20],
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56'],
+      },
+    ],
+  };
 
   return (
     <div className="system-info-container">
@@ -118,6 +171,27 @@ const SystemInfo = () => {
             </div>
           </CardContent>
         </Card>
+
+        {/* Grafiklerin yerleştirileceği alan */}
+        <div className="chart-row">
+          {/* Kullanıcı Grafiği */}
+          <div className="chart-container">
+            <h3 className="chart-title">Kullanıcı Grafiği</h3>
+            <Bar data={userChartData} options={{ responsive: true }} />
+          </div>
+
+          {/* Atılan Requestler Grafiği */}
+          <div className="chart-container">
+            <h3 className="chart-title">Atılan Requestler Grafiği</h3>
+            <Bar data={requestChartData} options={{ responsive: true }} />
+          </div>
+
+          {/* Dairesel Grafik */}
+          <div className="chart-container">
+            <h3 className="chart-title">İstek Türleri Grafiği</h3>
+            <Doughnut data={doughnutChartData} options={{ responsive: true }} />
+          </div>
+        </div>
       </motion.div>
     </div>
   );
