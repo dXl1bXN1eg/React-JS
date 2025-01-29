@@ -1,105 +1,105 @@
-/* system.css */
-
-/* Genel stil ayarları */
 .system-info-container {
-    min-height: 50vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    margin-top: 100px;
+    backdrop-filter: blur(12px) !important;
+    padding: 5rem 1rem;
 }
 
 .system-info-grid {
-    background-color: rgba(0, 0, 0, 0.7);
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    gap: 1.5rem;
-    max-width: 1200px;
-    width: calc(100% - 10px);
-    padding: 10px 20px;
+    gap: 2rem;
+    /* Grid arasındaki boşluk */
+    width: 100%;
+    padding: 2rem;
+    border-radius: 1.5rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
     .system-info-grid {
         grid-template-columns: repeat(2, 1fr);
+        padding: 2.5rem;
     }
 }
 
 @media (min-width: 1024px) {
     .system-info-grid {
         grid-template-columns: repeat(4, 1fr);
+        gap: 2.5rem;
     }
 }
 
-/* Kart stili */
 .custom-card {
-    border: 1px solid rgba(75, 85, 99, 0.5);
-    border-radius: 0.75rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    background-color: rgba(0, 0, 0, 0.7);
-    transition: box-shadow 0.3s;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    overflow: hidden;
 }
 
 .custom-card:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
 }
 
-/* Kart içeriği */
 .custom-card-content {
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 1.5rem;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 1.75rem;
 }
 
-/* Kart başlığı ve ikon stili */
 .card-header {
     display: flex;
     align-items: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
 }
 
 .icon-container {
-    padding: 0.75rem;
-    border-radius: 50%;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+.icon-container:hover {
+    transform: rotate(15deg);
 }
 
 .disk-icon {
-    background-color: rgba(34, 197, 94, 0.2);
+    background-color: rgba(34, 197, 94, 0.15);
 }
 
 .network-icon {
-    background-color: rgba(37, 99, 235, 0.2);
+    background-color: rgba(37, 99, 235, 0.15);
 }
 
 .user-icon {
-    background-color: rgba(245, 158, 11, 0.2);
+    background-color: rgba(245, 158, 11, 0.15);
 }
 
 .ip-icon {
-    background-color: rgba(126, 34, 206, 0.2);
+    background-color: rgba(126, 34, 206, 0.15);
 }
 
 .icon {
-    color: inherit;
-    /* İkon rengini kapsayıcıdan alır */
-    font-size: 1.5rem;
+    font-size: 1.75rem;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
-/* Kart başlık stili */
 .card-title {
-    font-size: 1.25rem;
+    font-size: 1.375rem;
     font-weight: 600;
-    color: white;
+    color: #f8fafc;
+    letter-spacing: -0.5px;
 }
 
-/* Kart gövde stilleri */
 .card-body {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .disk-item,
@@ -107,37 +107,87 @@
 .user-item {
     display: flex;
     justify-content: space-between;
-    padding: 0.75rem;
-    background-color: rgba(75, 85, 99, 0.3);
-    border-radius: 0.5rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 0.75rem;
+    transition: background-color 0.3s ease;
+}
+
+.disk-item:hover,
+.network-item:hover,
+.user-item:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .disk-name,
 .network-key,
 .user-name {
-    color: #d1d5db;
-    /* Açık gri */
+    color: #e2e8f0;
+    font-size: 0.95rem;
+    font-weight: 500;
 }
 
 .disk-size,
 .network-value {
     color: #34d399;
-    /* Yeşil */
+    font-weight: 600;
+    font-size: 1.05rem;
 }
 
-/* IP adresi stili */
 .ip-address {
-    padding: 1rem;
-    background-color: rgba(75, 85, 99, 0.3);
-    border-radius: 0.5rem;
-    text-align: center;
+    padding: 1.25rem;
+    background: linear-gradient(45deg, rgba(126, 34, 206, 0.1), rgba(79, 70, 229, 0.1));
+    border-radius: 0.75rem;
+    margin-top: 1rem;
 }
 
 .ip-value {
-    color: #a855f7;
-    /* Mor */
-    font-size: 1.25rem;
-    font-weight: bold;
-    font-family: monospace;
-    /* Monospace yazı tipi */
+    color: #c084fc;
+    font-size: 1.3rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+
+
+.chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    /* Boşluk azaltıldı */
+    justify-content: center;
+    width: 100%;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.chart-container {
+    border-radius: 1rem;
+    backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    height: 350px;
+    flex: 1 1 calc(33.33% - 1.5rem);
+    box-sizing: border-box;
+}
+
+/* Responsive Düzenlemeler */
+@media (max-width: 1024px) {
+    .chart-container {
+        flex: 1 1 calc(50% - 1.5rem);
+        /* 2'li düzen */
+        max-width: calc(50% - 1.5rem);
+    }
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        flex: 1 1 100%;
+        /* Mobilde tam genişlik */
+        max-width: 100%;
+    }
 }
