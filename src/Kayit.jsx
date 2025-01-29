@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Headers from './Headers';
 import '../css/register.css';
 import Anasayfa from './Anasayfa';
+import axios from 'axios';
 
 export default function Kayit() {
     const [formData, setFormData] = useState({ name: '', username: '', email: '', password: '' });
@@ -14,12 +15,16 @@ export default function Kayit() {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Basit bir kontrol
         if (formData.name && formData.username && formData.email && formData.password) {
-            alert('Registration successful!');
+            try {
+                const response = await axios.post('http://localhost:5000/api/register', formData);
+                alert('Registration successful! Message: ' + response.data.message);
+            } catch (error) {
+                alert('Registration failed: ' + (error.response ? error.response.data.error : error.message));
+            }
         } else {
             alert('Please fill in all fields.');
         }
