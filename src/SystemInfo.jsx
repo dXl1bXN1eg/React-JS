@@ -171,28 +171,28 @@ const SystemInfo = () => {
             </div>
           </CardContent>
         </Card>
-
-        {/* Grafiklerin yerleştirileceği alan */}
-        <div className="chart-row">
-          {/* Kullanıcı Grafiği */}
-          <div className="chart-container">
-            <h3 className="chart-title">Kullanıcı Grafiği</h3>
-            <Bar data={userChartData} options={{ responsive: true }} />
-          </div>
-
-          {/* Atılan Requestler Grafiği */}
-          <div className="chart-container">
-            <h3 className="chart-title">Atılan Requestler Grafiği</h3>
-            <Bar data={requestChartData} options={{ responsive: true }} />
-          </div>
-
-          {/* Dairesel Grafik */}
-          <div className="chart-container">
-            <h3 className="chart-title">İstek Türleri Grafiği</h3>
-            <Doughnut data={doughnutChartData} options={{ responsive: true }} />
-          </div>
-        </div>
       </motion.div>
+
+      {/* Grafiklerin yerleştirileceği alan */}
+      <div className="chart-row">
+        {/* Kullanıcı Grafiği */}
+        <div className="chart-container">
+          <h3 className="chart-title">Kullanıcı Grafiği</h3>
+          <Bar data={userChartData} options={{ responsive: true }} />
+        </div>
+
+        {/* Atılan Requestler Grafiği */}
+        <div className="chart-container">
+          <h3 className="chart-title">Atılan Requestler Grafiği</h3>
+          <Bar data={requestChartData} options={{ responsive: true }} />
+        </div>
+
+        {/* Dairesel Grafik */}
+        <div className="chart-container">
+          <h3 className="chart-title">İstek Türleri Grafiği</h3>
+          <Doughnut data={doughnutChartData} options={{ responsive: true }} />
+        </div>
+      </div>
     </div>
   );
 };
