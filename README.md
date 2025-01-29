@@ -10,6 +10,7 @@ npm install express sqlite3
 npm install react-router-dom
 npm install @shadcn/ui
 npm install axios
+npm install react-chartjs-2
 npm install react react-dom framer-motion tailwindcss postcss autoprefixer
 
 ```
