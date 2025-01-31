@@ -5,13 +5,16 @@
     justify-content: center;
     backdrop-filter: blur(12px) !important;
     padding: 5rem 1rem;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
 }
 
 .system-info-grid {
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     gap: 2rem;
-    /* Grid arasındaki boşluk */
     width: 100%;
     padding: 2rem;
     border-radius: 1.5rem;
