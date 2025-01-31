@@ -3,26 +3,21 @@
     color: white;
     padding: 1rem;
     width: 100%;
-    /* Genişlik %100 olarak ayarlandı */
     font-size: 20px;
     box-shadow: 0 4px 6px rgba(12, 12, 12, 0.1);
     background-color: rgba(0, 0, 0, 0.7);
     backdrop-filter: blur(10px);
     position: fixed;
-    /* Header'ı sabit yapmak için ekleme */
     top: 0;
-    /* Üstte sabit kalması için ekleme */
     left: 0;
-    /* Sol kenardan başlaması için ekleme */
     z-index: 1000;
-    /* Diğer içeriklerin üstünde görünmesi için ekleme */
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 70%;
     height: 50px;
     margin: 0 auto;
 }
