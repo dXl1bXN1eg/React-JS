@@ -5,8 +5,6 @@ import screen from '../images/screen.png';
 
 export default function Anasayfa() {
     return (
-        <div className='background-container'>
-            <img src={screen} />
-        </div>
+        <div className='background-container'></div>
     )
 }
