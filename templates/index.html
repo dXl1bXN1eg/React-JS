@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Log</title>
+</head>
+
+<body>
+    <h1>Gelen İstekler</h1>
+    <table border="1">
+        <tr>
+            <th>Method</th>
+            <th>URL</th>
+            <th>Path</th>
+            <th>Remote Address</th>
+            <th>User Agent</th>
+            <th>Headers</th>
+            <th>Args</th <th>Form Data</th>
+            <th>JSON Data</th>
+        </tr>
+        {% for request in requests %}
+        <tr>
+            <td>{{ request.method }}</td>
+            <td>{{ request.url }}</td>
+            <td>{{ request.path }}</td>
+            <td>{{ request.remote_addr }}</td>
+            <td>{{ request.user_agent }}</td>
+            <td>{{ request.headers }}</td>
+            <td>{{ request.args }}</td>
+            <td>{{ request.form_data }}</td>
+            <td>{{ request.json_data }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
