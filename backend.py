@@ -133,7 +133,6 @@ def get_users():
 
 @app.route('/')
 def index():
-    # İstekleri gösteren bir HTML sayfası
     return render_template('index.html', requests=requests_log)
 
 if __name__ == '__main__':
