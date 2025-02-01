@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 from flask_cors import CORS
 import socket
 import psutil
@@ -6,9 +6,39 @@ import os
 import sqlite3
 from werkzeug.security import generate_password_hash, check_password_hash
 from functools import wraps
+import netifaces
+from collections import deque, Counter
 
 app = Flask(__name__)
-CORS(app, resources={r"/api/*": {"origins": "*"}})
+CORS(app)
+
+requests_log = []
+
+@app.before_request
+def log_request():
+    # Her isteğin bilgilerini kaydedin
+    request_info = {
+        "method": request.method,
+        "url": request.url,
+        "path": request.path,
+        "headers": dict(request.headers),
+        "args": request.args.to_dict(),
+        "form_data": request.form.to_dict(),
+        "json_data": request.get_json() if request.is_json else None,
+        "remote_addr": request.remote_addr,
+        "user_agent": request.user_agent.string
+    }
+    requests_log.append(request_info)
+
+@app.route('/api/requests', methods=['GET'])
+def get_requests():
+    return jsonify(requests_log)
+
+@app.route('/api/clear', methods=['POST'])
+def clear_requests():
+    # İstekleri temizlemek için bir endpoint
+    requests_log.clear()
+    return jsonify({"message": "Request log cleared."})
 
 # SQLite veritabanı bağlantısı
 def get_db_connection():
@@ -45,8 +75,16 @@ def register():
 
 @app.route('/api/ip')
 def get_ip():
-    ip = socket.gethostbyname(socket.gethostname())
-    return jsonify({"ip": ip})
+    interfaces = netifaces.interfaces()
+    local_ip = None
+
+    for interface in interfaces:
+        addresses = netifaces.ifaddresses(interface)
+        if netifaces.AF_INET in addresses:
+            local_ip = addresses[netifaces.AF_INET][0]['addr']
+            if local_ip != '127.0.0.1':  
+                break
+    return jsonify({"ip": local_ip})
 
 @app.route('/api/disks')
 def get_disks():
@@ -91,6 +129,12 @@ def get_users():
     for user in psutil.users():
         users.add(user.name)  
     return jsonify(list(users))  
+
+
+@app.route('/')
+def index():
+    # İstekleri gösteren bir HTML sayfası
+    return render_template('index.html', requests=requests_log)
 
 if __name__ == '__main__':
     init_db()
